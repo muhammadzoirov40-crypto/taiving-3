@@ -7,9 +7,11 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-green-700: oklch(52.7% 0.154 150.069);
     --color-green-800: oklch(44.8% 0.119 151.328);
+    --color-green-900: oklch(39.3% 0.095 152.535);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-black: #000;
@@ -184,11 +186,26 @@
   .start {
     inset-inline-start: var(--spacing);
   }
+  .top-11 {
+    top: calc(var(--spacing) * 11);
+  }
+  .top-110 {
+    top: calc(var(--spacing) * 110);
+  }
+  .top-113 {
+    top: calc(var(--spacing) * 113);
+  }
+  .top-114 {
+    top: calc(var(--spacing) * 114);
+  }
   .top-120 {
     top: calc(var(--spacing) * 120);
   }
   .top-130 {
     top: calc(var(--spacing) * 130);
+  }
+  .top-140 {
+    top: calc(var(--spacing) * 140);
   }
   .right-7 {
     right: calc(var(--spacing) * 7);
@@ -219,6 +236,21 @@
   }
   .mx-6 {
     margin-inline: calc(var(--spacing) * 6);
+  }
+  .mx-\[40\%\] {
+    margin-inline: 40%;
+  }
+  .mx-\[42\%\] {
+    margin-inline: 42%;
+  }
+  .mx-\[43\%\] {
+    margin-inline: 43%;
+  }
+  .mx-\[45\%\] {
+    margin-inline: 45%;
+  }
+  .mx-auto {
+    margin-inline: auto;
   }
   .my-1 {
     margin-block: calc(var(--spacing) * 1);
@@ -277,11 +309,20 @@
   .ml-10 {
     margin-left: calc(var(--spacing) * 10);
   }
+  .ml-20 {
+    margin-left: calc(var(--spacing) * 20);
+  }
+  .ml-23 {
+    margin-left: calc(var(--spacing) * 23);
+  }
   .flex {
     display: flex;
   }
   .hidden {
     display: none;
+  }
+  .table {
+    display: table;
   }
   .h-1 {
     height: calc(var(--spacing) * 1);
@@ -315,6 +356,12 @@
   }
   .max-w-400 {
     max-width: calc(var(--spacing) * 400);
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .items-center {
     align-items: center;
@@ -454,6 +501,9 @@
   .text-gray-700 {
     color: var(--color-gray-700);
   }
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
   .text-green-600 {
     color: var(--color-green-600);
   }
@@ -463,8 +513,18 @@
   .text-green-800 {
     color: var(--color-green-800);
   }
+  .text-green-900 {
+    color: var(--color-green-900);
+  }
   .text-white {
     color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .lg\:absolute {
     @media (width >= 64rem) {
@@ -486,6 +546,11 @@
       top: 23%;
     }
   }
+  .lg\:mx-\[42\%\] {
+    @media (width >= 64rem) {
+      margin-inline: 42%;
+    }
+  }
   .lg\:mt-0 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 0);
@@ -494,6 +559,11 @@
   .lg\:mt-1 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 1);
+    }
+  }
+  .lg\:mt-5 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 5);
     }
   }
   .lg\:mt-20 {
@@ -646,11 +716,17 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
